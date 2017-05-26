@@ -1,103 +1,333 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
-    <!-- Theme Made By www.w3schools.com - No Copyright -->
-    <title>Bootstrap Theme The Band</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="~/css/StyleSheet1.css" />
+
+    <title>JADON Events</title>
+
+
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cssstyle.css" />
+
+    <link rel="stylesheet" href="css/fractionslider.css" />
+    <link rel="stylesheet" href="css/style-fraction.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" data-name="skins">
+    <link rel="stylesheet" href="css/layout/wide.css" data-name="layout">
+    <link rel="stylesheet" type="text/css" href="css/switcher.css" media="screen" />
 
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <img src="~/img/UOK-Logo-Aerc.png"  style="height:60px;"/>
-             
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Contact Us", "contact", "Home")</li>
-                    <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                    <li>@Html.ActionLink("Gallery", "gallery", "Home")</li>
-
-                      <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            MORE
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Merchandise</a></li>
-                            <li><a href="#">Extras</a></li>
-                            <li><a href="#">Media</a></li>
+<body>
+    <!--Start Header-->
+    <header id="header">
+        <!-- Start info-bar -->
+        <div id="info-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 top-info hidden-xs">
+                        <span><i class="fa fa-phone"></i>Phone: (021) 36930102</span>
+                        <span><i class="fa fa-envelope"></i>Email: mail@example.com</span>
+                    </div>
+                    <div class="col-sm-4 top-info hidden-xs">
+                        <ul>
+                            <li><a href="" class="my-tweet"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="" class="my-facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="" class="my-skype"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="" class="my-pint"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="" class="my-rss"><i class="fa fa-rss"></i></a></li>
+                            <li><a href="" class="my-google"><i class="fa fa-google-plus"></i></a></li>
                         </ul>
-                    </li>
-                    <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-                </ul>
+
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+        <!--/#info-bar -->
 
-    <div id="contentofbody" style="width:100%;min-height:700px;background-color:#808080;margin-top:60px;">
+        <div id="logo-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                        <div id="logo">
+                            <h1><a href="index.html"><img src="images/fraction-slider/1234567.png" width="140" height="30" /></a></h1>
+                        </div>
+                    </div>
 
+                    <div class="col-md-9 col-sm-9">
+                        <!-- Navigation
+                        ================================================== -->
+                        <div class="navbar navbar-default navbar-static-top" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li class="active">
+                                    @Html.ActionLink("Home", "Index", "Home")
+
+
+                                    </li>
+
+                                    <li>
+                                        <a href="#">Gallery</a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="#">Convocations</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>@Html.ActionLink("View Gallery", "convocations", "Home") </li>
+
+                                                </ul>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">Orientation</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>@Html.ActionLink("View Gallery", "orientation", "Home") </li>
+
+                                                </ul>
+                                            </li>
+
+                                            <li>@Html.ActionLink("Staff Gallery", "staffgalllery", "Home") </li>
+
+
+                                            
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                     @Html.ActionLink("About Us", "About", "Home")
+
+                                    </li>
+
+                                   
+
+                                    <li>
+                                        @Html.ActionLink("Admission", "admission", "Home")
+
+
+                                    </li>
+
+                                    <li>
+                                        @Html.ActionLink("Contact Us", "contact", "Home")
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.container -->
+        </div>
+        <!--/#logo-bar -->
+    </header>
+    <!--End Header-->
+    
+
+
+    <div id="contentofbody" >
 
         @RenderBody()
-
     </div>
-    
-       
 
-   
-    <!-- Footer -->
-    <footer class="text-center">
-        <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
-            <span class="glyphicon glyphicon-chevron-up"></span>
-        </a><br><br>
-        <p>Copy Rights Reserved to &copy; Salman Masood</p>
+
+        <section class="promo_box wow bounceInUp" data-wow-offset="50">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-sm-9">
+
+                        <div class="promo_content">
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-3">
+
+                        <div class="pb_action">
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+    <!--start footer-->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-6 col-md-5 col-lg-5">
+
+                    <div class="widget_title">
+
+                        <h4><span>About Us</span></h4>
+
+                    </div>
+
+                    <div class="widget_content">
+
+                        <p>We are an experienced team of Event Management Specialists who know how to plan, promote and run an event that will achieve your goal. Jodan event production to social impact, fundraising technology services to customer service, we  have got you covered.</p>
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-4">
+
+                    <div class="widget_title">
+
+                        <h4><span>Contect Us</span></h4>
+
+                    </div>
+
+                    <ul class="contact-details-alt">
+
+                        <li><i class="fa fa-map-marker"></i> <p><strong>Address</strong>: Aptech B-11, Karachi 75850 </p></li>
+
+                        <li><i class="fa fa-user"></i> <p><strong>Phone</strong>: (021) 36930102</p></li>
+
+                        <li><i class="fa fa-envelope"></i> <p><strong>Email</strong>: <a href="#">mail@example.com</a></p></li>
+
+                    </ul>
+
+
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-3">
+                    <div class="widget_title">
+                        <h4><span>Pages</span></h4>
+                    </div>
+                    <div class="widget_content">
+                        <ul class="links">
+                            <li><i class="fa fa-caret-right"></i> <a href="#">Privacy Policy</a></li>
+                            <li><i class="fa fa-caret-right"></i> <a href="#"> Terms & Condition</a></li>
+                            <li><i class="fa fa-caret-right"></i> <a href="#">Our Blog </a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
     </footer>
 
+    <!--end footer-->
+
+    <section class="footer_bottom">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-6">
+
+                    <p class="copyright">&copy; JADON EVENTS MANAGMENT | Powered by  <a href="http://www.jquery.com/">jQuery</a></p>
+
+                </div>
+
+                <div class="col-sm-6 ">
+
+                    <div class="footer_social">
+
+                        <ul class="footbot_social">
+
+                            <li>
+                                <a class="fb" href="#." data-placement="top" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a>
+
+                            </li>
+
+                            <li>
+                                <a class="twtr" href="#." data-placement="top" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a>
+
+                            </li>
+
+                            <li><a class="dribbble" href="#." data-placement="top" data-toggle="tooltip" title="Dribbble"><i class="fa fa-dribbble"></i></a></li>
+
+                            <li><a class="skype" href="#." data-placement="top" data-toggle="tooltip" title="Skype"><i class="fa fa-skype"></i></a></li>
+
+                            <li><a class="rss" href="#." data-placement="top" data-toggle="tooltip" title="RSS"><i class="fa fa-rss"></i></a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script type="text/javascript" src="~/js/jquery-1.10.2.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.easing.1.3.js"></script>
+    <script src="~/js/retina-1.1.0.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.cookie.js"></script> <!-- jQuery cookie -->
+    <script type="text/javascript" src="~/js/styleswitch.js"></script> <!-- Style Colors Switcher -->
+    <script src="~/js/jquery.fractionslider.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="~/js/jquery.smartmenus.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.smartmenus.bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.jcarousel.js"></script>
+    <script type="text/javascript" src="~/js/jflickrfeed.js"></script>
+    <script type="text/javascript" src="~/js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="~/js/swipe.js"></script>
+    <script type="text/javascript" src="~/js/jquery-scrolltofixed-min.js"></script>
+    <script src="~/js/main.js"></script>
+
+    <!-- Start Style Switcher -->
+    <div class="switcher"></div>
+    <!-- End Style Switcher -->
     <script>
-$(document).ready(function(){
-  // Initialize Tooltip
-  $('[data-toggle="tooltip"]').tooltip();
-
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-})
+        $(window).load(function () {
+            $('.slider').fractionSlider({
+                'fullWidth': true,
+                'controls': true,
+                'responsive': true,
+                'dimensions': "1920,450",
+                'timeout': 5000,
+                'increase': true,
+                'pauseOnHover': true,
+                'slideEndAnimation': false,
+                'autoChange': true
+            });
+        });
     </script>
+
+    <!-- WARNING: Wow.js doesn't work in IE 9 or less -->
+    <!--[if gte IE 9 | !IE ]><!-->
+    <script type="text/javascript" src="~/js/wow.min.js"></script>
+    <script>
+        // WOW Animation
+        new WOW().init();
+    </script>
+    <![endif]-->
 
 </body>
 </html>

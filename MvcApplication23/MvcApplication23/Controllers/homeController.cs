@@ -26,11 +26,27 @@ namespace MvcApplication23.Controllers
             return View();
         }
 
-
-        public ActionResult gallery()
+        public ActionResult convocations()
         {
             return View();
         }
+        //
+
+        public ActionResult orientation()
+        {
+            return View();
+        }
+
+        public ActionResult staffgalllery()
+        {
+            return View();
+        }
+       
+        public ActionResult admission()
+        {
+            return View();
+        }
+
 
     }
 }
