@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations; //i  have added this class for validation..................
 using System.Linq;
 using System.Web;
 
@@ -53,7 +53,68 @@ namespace MvcApplication23.Models
 
         public string stu_city { get; set; }
 
-  
+
+        // ssc records...........................................................................................
+
+
+
+        [Required(ErrorMessage = "CNIC is Required!")]
+        [Display(Name = "CNIC:")]
+
+       // public int  ssc_id{ get; set; }
+
+       
+
+        public string ssc_institute { get; set; }
+
+        
+
+        public string ssc_board { get; set; }
+       
+        
+        public int ssc_totalmarks { get; set; }
+
+
+
+      
+
+        public string ssc_enrolment { get; set; }
+
+
+        public int ssc_fk_studentreg { get; set; }
+
+
+        //hsc..................................................................................
+
+        [Required(ErrorMessage = "CNIC is Required!")]
+        [Display(Name = "CNIC:")]
+
+        // public int  hsc_id{ get; set; }
+
+
+        public string hsc_institute { get; set; }
+
+        [Required(ErrorMessage = "Board Of Education is Required!")]
+        [Display(Name = "Board Of Education :")]
+
+        public string hsc_board { get; set; }
+
+        [Required(ErrorMessage = "TotalMarks is Required!")]
+        [Display(Name = "TotalMarks :")]
+
+        public int hsc_totalmarks { get; set; }
+
+
+
+        [Required(ErrorMessage = "Enrolment# is Required!")]
+        [Display(Name = "Enrolment# :")]
+
+        public string hsc_enrolment { get; set; }
+
+
+        public int hsc_fk_studentreg { get; set; }
+
+
 
     }
 }
