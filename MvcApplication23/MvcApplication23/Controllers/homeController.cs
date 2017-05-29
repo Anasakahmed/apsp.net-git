@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcApplication23.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -41,11 +42,26 @@ namespace MvcApplication23.Controllers
         {
             return View();
         }
-       
+     
+        [HttpGet]
         public ActionResult admission()
         {
             return View();
         }
+
+
+       [HttpPost]
+       public ActionResult admission(students stu)
+       {
+           if (ModelState.IsValid == true)
+           {
+           
+
+               ViewBag.aletmessage = "<script> alert('changes are saved!!!');     </script>";
+
+           }      
+           return View();
+       }
 
 
     }

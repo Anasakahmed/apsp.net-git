@@ -63,9 +63,9 @@ namespace MvcApplication23.ModelClass
 
         //ssc  method.........................................................
 
-        public string insert_ssc(students stu ,string id)
+        public bool insert_ssc(students stu ,string id)
         {
-            string s = "";
+            bool s = false;
             SqlConnection conn = new SqlConnection(cs);
             try
             {
@@ -81,13 +81,12 @@ namespace MvcApplication23.ModelClass
                 conn.Open();
                 cmd.ExecuteNonQuery();
 
-
-                s = "DATA record has been inserted successfully.....";
-
+                s = true;
+                
             }
             catch (Exception)
             {
-                s = "data is not inserted !!!";
+                s = false;
 
             }
 
@@ -106,9 +105,9 @@ namespace MvcApplication23.ModelClass
 
         //hsc method........................................
 
-        public string insert_hsc(students stu, string id)
+        public bool insert_hsc(students stu, string id)
         {
-            string s = "";
+           bool s ;
             SqlConnection conn = new SqlConnection(cs);
             try
             {
@@ -128,12 +127,12 @@ namespace MvcApplication23.ModelClass
                 cmd.ExecuteNonQuery();
 
 
-                s = "DATA record has been inserted successfully.....";
+                s =true;
 
             }
             catch (Exception)
             {
-                s = "data is not inserted !!!";
+                s = false;
 
             }
 

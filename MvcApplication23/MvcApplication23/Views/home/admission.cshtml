@@ -35,18 +35,19 @@
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <strong>Error!</strong> There was an error sending your message.
         </div>
-
-        <form id="contactForm" action="" novalidate>
+@using (Html.BeginForm())
+{
+ 
 
           
             <div class="row">
                 <div class="form-group">
                     <div class="col-lg-6 ">
-                   <b>CNIC :</b>     @Html.TextBoxFor(Model=> Model.stu_cnic)
+                   <b>CNIC :</b>     @Html.TextBoxFor(Model=> Model.stu_cnic,new { @class="form-control"})
 
                     </div>
                     <div class="col-lg-6 ">
-                        <b>Name :</b>  @Html.TextBoxFor(Model=> Model.stu_name)
+                        <b>Name :</b>  @Html.TextBoxFor(Model => Model.stu_name, new { @class = "form-control" })
                     </div>
                 </div>
 
@@ -55,11 +56,11 @@
             <div class="row">
                 <div class="form-group">
                     <div class="col-lg-6 ">
-                        <b>Father Name :</b>     @Html.TextBoxFor(Model=> Model.stu_fname)
+                        <b>Father Name :</b>     @Html.TextBoxFor(Model => Model.stu_fname, new { @class = "form-control" })
 
                     </div>
                     <div class="col-lg-6 ">
-                        <b>Address :</b>  @Html.TextBoxFor(Model=> Model.stu_address)
+                        <b>Address :</b>  @Html.TextBoxFor(Model => Model.stu_address, new { @class = "form-control" })
                     </div>
                 </div>
 
@@ -69,11 +70,11 @@
             <div class="row">
                 <div class="form-group">
                     <div class="col-lg-6 ">
-                        <b>Date Of Birth:</b>     @Html.TextBoxFor(Model => Model.stu_dob)
+                        <b>Date Of Birth:</b>     @Html.TextBoxFor(Model => Model.stu_dob, new { @class = "form-control" })
 
                     </div>
                     <div class="col-lg-6 ">
-                        <b>Nationality :</b>  @Html.TextBoxFor(Model => Model.nationality)
+                        <b>Nationality :</b>  @Html.TextBoxFor(Model => Model.nationality, new { @class = "form-control" })
                     </div>
                 </div>
 
@@ -85,11 +86,11 @@
             <div class="row">
                 <div class="form-group">
                     <div class="col-lg-6 ">
-                        <b>Domicile:</b>     @Html.TextBoxFor(Model => Model.stu_domicile)
+                        <b>Domicile:</b>     @Html.TextBoxFor(Model => Model.stu_domicile, new { @class = "form-control" })
 
                     </div>
                     <div class="col-lg-6 ">
-                        <b>City :</b>  @Html.TextBoxFor(Model => Model.stu_city)
+                        <b>City :</b>  @Html.TextBoxFor(Model => Model.stu_city, new { @class = "form-control" })
                     </div>
                 </div>
 
@@ -102,11 +103,11 @@
             <div class="row">
                 <div class="form-group">
                     <div class="col-lg-6 ">
-                        <b>SSC Institue:</b>     @Html.TextBoxFor(Model => Model.ssc_institute)
+                        <b>SSC Institue:</b>     @Html.TextBoxFor(Model => Model.ssc_institute, new { @class = "form-control" })
 
                     </div>
                     <div class="col-lg-6 ">
-                        <b>SSC Board :</b>  @Html.TextBoxFor(Model => Model.ssc_board)
+                        <b>SSC Board :</b>  @Html.TextBoxFor(Model => Model.ssc_board, new { @class = "form-control" })
                     </div>
                 </div>
 
@@ -116,11 +117,11 @@
             <div class="row">
                 <div class="form-group">
                     <div class="col-lg-6 ">
-                        <b>SSC TotalMarks:</b> @Html.TextBoxFor(Model => Model.ssc_totalmarks)
+                        <b>SSC TotalMarks:</b> @Html.TextBoxFor(Model => Model.ssc_totalmarks, new { @class = "form-control" })
 
                     </div>
                     <div class="col-lg-6 ">
-                        <b>SSC Enrolment:</b>  @Html.TextBoxFor(Model => Model.ssc_enrolment)
+                        <b>SSC Enrolment:</b>  @Html.TextBoxFor(Model => Model.ssc_enrolment, new { @class = "form-control" })
                     </div>
                 </div>
 
@@ -132,11 +133,11 @@
             <div class="row">
                 <div class="form-group">
                     <div class="col-lg-6 ">
-                        <b>HSC Institue:</b>     @Html.TextBoxFor(Model => Model.hsc_institute)
+                        <b>HSC Institue:</b>     @Html.TextBoxFor(Model => Model.hsc_institute, new { @class = "form-control" })
 
                     </div>
                     <div class="col-lg-6 ">
-                        <b>HSC Board :</b>  @Html.TextBoxFor(Model => Model.hsc_board)
+                        <b>HSC Board :</b>  @Html.TextBoxFor(Model => Model.hsc_board, new { @class = "form-control" })
                     </div>
                 </div>
 
@@ -146,16 +147,28 @@
             <div class="row">
                 <div class="form-group">
                     <div class="col-lg-6 ">
-                        <b>HSC TotalMarks:</b> @Html.TextBoxFor(Model => Model.hsc_totalmarks)
+                        <b>HSC TotalMarks:</b> @Html.TextBoxFor(Model => Model.hsc_totalmarks, new { @class = "form-control" })
 
                     </div>
                     <div class="col-lg-6 ">
-                        <b>HSC Enrolment:</b>  @Html.TextBoxFor(Model => Model.hsc_enrolment)
+                        <b>HSC Enrolment:</b>  @Html.TextBoxFor(Model => Model.hsc_enrolment, new { @class = "form-control" })
                     </div>
                 </div>
 
             </div>  @*row end*@
 
+            <div class="row">
+                <div class="form-group">
+
+
+                    <input type="submit" id="submit" value="Add Record!"  class="form-control btn btn-info" />
+
+
+            </div>  @*row end*@
+                </div>
+
+}
+            
 
 
 
@@ -204,11 +217,7 @@
 
 
 
-
-
-
-
-        </form>
+        @*</form>*@
        
     </div>
     
@@ -294,6 +303,11 @@
 <script type="text/javascript" src="~/js/wow.min.js"></script>
 <script>
             // WOW Animation
-            new WOW().init();
+    new WOW().init();
+
+
+
 </script>
    
+
+    
