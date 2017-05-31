@@ -1,6 +1,8 @@
-﻿using MvcApplication23.Models;
+﻿using MvcApplication23.ModelClass;
+using MvcApplication23.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -37,31 +39,46 @@ namespace MvcApplication23.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult orientation(HttpPostedFileBase file)
+        {
 
+           
+        return View();
+        }
+        
+        
+        
         public ActionResult staffgalllery()
         {
             return View();
         }
      
-        [HttpGet]
+      [HttpGet]
         public ActionResult admission()
         {
             return View();
         }
+      [HttpPost]
+        public ActionResult admission(students stu)
+        {
+            if (ModelState.IsValid == true)
+            {
 
 
-       [HttpPost]
-       public ActionResult admission(students stu)
-       {
-           if (ModelState.IsValid == true)
-           {
-           
+               studentviewmodel stvm = new studentviewmodel();
+               string s= stvm.insert_loginmethod(stu);
+               stvm.insert_ssc(stu, s);
+               stvm.insert_hsc(stu, s);
 
-               ViewBag.aletmessage = "<script> alert('changes are saved!!!');     </script>";
+                ViewBag.alertmessage = "<script> alert('Data Sucessfully uploaded!!!');     </script>";
 
-           }      
-           return View();
-       }
+
+            }
+            return View();
+        }
+
+      
 
 
     }

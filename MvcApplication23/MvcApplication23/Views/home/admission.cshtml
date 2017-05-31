@@ -4,6 +4,7 @@
     ViewBag.Title = "admission";
     Layout = "~/Views/shared/_LayoutPage.cshtml";
 }
+
 <link rel="stylesheet" href="~/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/style.css">
 <link rel="stylesheet" href="~/css/cssstyle.css" />
@@ -27,148 +28,165 @@
         <p>On the other hand 'contacting us' is much more formal & I would prefer to see it book-ended with 'Thank you'.</p>
 
         <div class="alert alert-success hidden alert-dismissable" id="contactSuccess">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            
             <strong>Success!</strong> Your message has been sent to us.
         </div>
 
         <div class="alert alert-error hidden" id="contactError">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            
             <strong>Error!</strong> There was an error sending your message.
         </div>
 @using (Html.BeginForm())
 {
- 
+    <div style="margin-left:50px">
 
-          
-            <div class="row">
-                <div class="form-group">
-                    <div class="col-lg-6 ">
-                   <b>CNIC :</b>     @Html.TextBoxFor(Model=> Model.stu_cnic,new { @class="form-control"})
+        <table>
+            <tr>
+                <td>
+                    <b>CNIC :</b>   <div class="form-control">  @Html.TextBoxFor(Model => Model.stu_cnic)</div>
+                </td>
+                <td>
+                    <b>Name :</b> <div class="form-control">  @Html.TextBoxFor(Model => Model.stu_name)</div>
+                </td>
+                <td></td>
+            </tr>
 
+            <tr>
+                <td>
+                    <b>Father Name :</b><div class="form-control">     @Html.TextBoxFor(Model => Model.stu_fname)</div>
+                </td>
+                <td>
+                    <b>Address :</b><div class="form-control">  @Html.TextBoxFor(Model => Model.stu_address)</div>
+
+
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <b>Date Of Birth:</b><div class="form-control">     @Html.TextBoxFor(Model => Model.stu_dob)</div>
+                </td>
+                <td>
+                    <b>Nationality :</b><div class="form-control">  @Html.TextBoxFor(Model => Model.nationality)</div>
+
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td>
+                    <b>Domicile:</b>  <div class="form-control">   @Html.TextBoxFor(Model => Model.stu_domicile)</div>
+
+
+                </td>
+                <td>
+                    <b>City :</b><div class="form-control">  @Html.TextBoxFor(Model => Model.stu_city)</div>
+
+
+                </td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td>
+                    <b>SSC Institue:</b>   <div class="form-control">  @Html.TextBoxFor(Model => Model.ssc_institute)</div>
+
+
+                </td>
+                <td>
+                    <b>SSC Board :</b> <div class="form-control"> @Html.TextBoxFor(Model => Model.ssc_board)</div>
+
+                </td>
+            </tr>
+
+
+
+
+
+            <tr>
+                <td>
+                    <b>SSC TotalMarks:</b><div class="form-control">
+                        @Html.TextBoxFor(Model => Model.ssc_totalmarks)
                     </div>
-                    <div class="col-lg-6 ">
-                        <b>Name :</b>  @Html.TextBoxFor(Model => Model.stu_name, new { @class = "form-control" })
+
+
+
+                </td>
+                <td>
+                    <b>SSC Enrolment:</b><div class="form-control">
+                        @Html.TextBoxFor(Model => Model.ssc_enrolment)
                     </div>
-                </div>
 
-            </div>
+                </td>
+            </tr>
 
-            <div class="row">
-                <div class="form-group">
-                    <div class="col-lg-6 ">
-                        <b>Father Name :</b>     @Html.TextBoxFor(Model => Model.stu_fname, new { @class = "form-control" })
 
+
+
+
+
+            <tr>
+                <td>
+                    <b>HSC Institue:</b><div class="form-control">
+                        @Html.TextBoxFor(Model => Model.hsc_institute)
                     </div>
-                    <div class="col-lg-6 ">
-                        <b>Address :</b>  @Html.TextBoxFor(Model => Model.stu_address, new { @class = "form-control" })
+
+
+
+
+
+                </td>
+                <td>
+                    <b>HSC Board :</b><div class="form-control">
+                        @Html.TextBoxFor(Model => Model.hsc_board)
                     </div>
-                </div>
 
-            </div>
-        
+                </td>
+            </tr>
 
-            <div class="row">
-                <div class="form-group">
-                    <div class="col-lg-6 ">
-                        <b>Date Of Birth:</b>     @Html.TextBoxFor(Model => Model.stu_dob, new { @class = "form-control" })
 
+            <tr>
+                <td>
+                    <b>HSC TotalMarks:</b><div class="form-control">
+                        @Html.TextBoxFor(Model => Model.hsc_totalmarks)
                     </div>
-                    <div class="col-lg-6 ">
-                        <b>Nationality :</b>  @Html.TextBoxFor(Model => Model.nationality, new { @class = "form-control" })
+                </td>
+                <td>
+                    <b>HSC Enrolment:</b><div class="form-control">
+                        @Html.TextBoxFor(Model => Model.hsc_enrolment)
                     </div>
-                </div>
 
-            </div>
+                </td>
+            </tr>
 
-            @*1st row end*@
+            <tr><td><input type="submit" id="submit" value="Add Record!" class="btn btn-success" /></td></tr>
 
-    
-            <div class="row">
-                <div class="form-group">
-                    <div class="col-lg-6 ">
-                        <b>Domicile:</b>     @Html.TextBoxFor(Model => Model.stu_domicile, new { @class = "form-control" })
 
-                    </div>
-                    <div class="col-lg-6 ">
-                        <b>City :</b>  @Html.TextBoxFor(Model => Model.stu_city, new { @class = "form-control" })
-                    </div>
-                </div>
 
-            </div>  @*row end*@
+
+            <tr> <td>@Html.Raw(ViewBag.alertmessage)</td></tr>
 
 
 
 
 
-            <div class="row">
-                <div class="form-group">
-                    <div class="col-lg-6 ">
-                        <b>SSC Institue:</b>     @Html.TextBoxFor(Model => Model.ssc_institute, new { @class = "form-control" })
 
-                    </div>
-                    <div class="col-lg-6 ">
-                        <b>SSC Board :</b>  @Html.TextBoxFor(Model => Model.ssc_board, new { @class = "form-control" })
-                    </div>
-                </div>
-
-            </div>  @*row end*@
+        </table>
 
 
-            <div class="row">
-                <div class="form-group">
-                    <div class="col-lg-6 ">
-                        <b>SSC TotalMarks:</b> @Html.TextBoxFor(Model => Model.ssc_totalmarks, new { @class = "form-control" })
 
-                    </div>
-                    <div class="col-lg-6 ">
-                        <b>SSC Enrolment:</b>  @Html.TextBoxFor(Model => Model.ssc_enrolment, new { @class = "form-control" })
-                    </div>
-                </div>
-
-            </div>  @*row end*@
-
-            @*hsc-------------------------------------------------------------------*@
-
-
-            <div class="row">
-                <div class="form-group">
-                    <div class="col-lg-6 ">
-                        <b>HSC Institue:</b>     @Html.TextBoxFor(Model => Model.hsc_institute, new { @class = "form-control" })
-
-                    </div>
-                    <div class="col-lg-6 ">
-                        <b>HSC Board :</b>  @Html.TextBoxFor(Model => Model.hsc_board, new { @class = "form-control" })
-                    </div>
-                </div>
-
-            </div>  @*row end*@
-
-
-            <div class="row">
-                <div class="form-group">
-                    <div class="col-lg-6 ">
-                        <b>HSC TotalMarks:</b> @Html.TextBoxFor(Model => Model.hsc_totalmarks, new { @class = "form-control" })
-
-                    </div>
-                    <div class="col-lg-6 ">
-                        <b>HSC Enrolment:</b>  @Html.TextBoxFor(Model => Model.hsc_enrolment, new { @class = "form-control" })
-                    </div>
-                </div>
-
-            </div>  @*row end*@
-
-            <div class="row">
-                <div class="form-group">
-
-
-                    <input type="submit" id="submit" value="Add Record!"  class="form-control btn btn-info" />
-
-
-            </div>  @*row end*@
-                </div>
-
+    </div>
 }
             
+        <div style="color:red;margin-left:50px;">
+            <p >@Html.ValidationSummary()</p>
+        </div>
 
 
 
@@ -215,10 +233,7 @@
 
 
 
-
-
-        @*</form>*@
-       
+        
     </div>
     
     <div class="col-lg-4 col-md-4 col-sm-4">

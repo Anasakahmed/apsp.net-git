@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace MvcApplication23.ModelClass
 {
@@ -25,6 +27,7 @@ namespace MvcApplication23.ModelClass
                 cmd.Parameters.Add("@STU_NAME", SqlDbType.NVarChar, 50).Value = stu.stu_name;
                 cmd.Parameters.Add("@STU_FNAME", SqlDbType.NVarChar, 50).Value = stu.stu_fname;
                 cmd.Parameters.Add("@STU_ADDRESS", SqlDbType.NVarChar, 50).Value = stu.stu_address;
+                cmd.Parameters.Add("@STU_DOB", SqlDbType.NVarChar, 50).Value = stu.stu_dob;
                 cmd.Parameters.Add("@STU_NATIONALITY ", SqlDbType.NVarChar, 50).Value = stu.nationality;
                 cmd.Parameters.Add("@STU_DOMICILE", SqlDbType.NVarChar, 50).Value = stu.stu_domicile;
                 cmd.Parameters.Add("@STU_CITY", SqlDbType.NVarChar, 50).Value = stu.stu_city;
@@ -34,7 +37,7 @@ namespace MvcApplication23.ModelClass
                     Value = -1,
                     Direction = ParameterDirection.Output
                 };
-
+                cmd.Parameters.Add(paramNewId);
                 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -144,7 +147,6 @@ namespace MvcApplication23.ModelClass
             return s;
 
         } //method end...........
-
 
 
 

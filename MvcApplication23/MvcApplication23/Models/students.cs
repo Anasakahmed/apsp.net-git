@@ -58,8 +58,8 @@ namespace MvcApplication23.Models
 
 
 
-        [Required(ErrorMessage = "CNIC is Required!")]
-        [Display(Name = "CNIC:")]
+        [Required(ErrorMessage = "ssc Institue is Required!")]
+        [Display(Name = "ssc Institue:")]
 
        // public int  ssc_id{ get; set; }
 
@@ -67,52 +67,59 @@ namespace MvcApplication23.Models
 
         public string ssc_institute { get; set; }
 
-        
+
+
+        [Required(ErrorMessage = "ssc Board is Required!")]
+        [Display(Name = "ssc Board:")]
 
         public string ssc_board { get; set; }
-       
-        
+
+        [Required(ErrorMessage = "ssc Total Marks is Required!")]
+        [Display(Name = "ssc Total Marks:")]
+
         public int ssc_totalmarks { get; set; }
 
 
 
-      
+
+        [Required(ErrorMessage = "ssc enrolment is Required!")]
+        [Display(Name = "ssc enrolment Marks:")]
 
         public string ssc_enrolment { get; set; }
 
 
-        public int ssc_fk_studentreg { get; set; }
+        //public int ssc_fk_studentreg { get; set; }
 
 
         //hsc..................................................................................
 
-        [Required(ErrorMessage = "CNIC is Required!")]
-        [Display(Name = "CNIC:")]
 
-        // public int  hsc_id{ get; set; }
 
+
+        [Required(ErrorMessage = "Hsc Institue is Required!")]
+        [Display(Name = "hsc Institue:")]
 
         public string hsc_institute { get; set; }
 
-        [Required(ErrorMessage = "Board Of Education is Required!")]
-        [Display(Name = "Board Of Education :")]
+        [Required(ErrorMessage = "HSC Board Of Education is Required!")]
+        [Display(Name = "HSC Board Of Education :")]
 
         public string hsc_board { get; set; }
 
-        [Required(ErrorMessage = "TotalMarks is Required!")]
-        [Display(Name = "TotalMarks :")]
+        [Required(ErrorMessage = "HSC TotalMarks is Required!")]
+        [Display(Name = "HSC TotalMarks :")]
 
         public int hsc_totalmarks { get; set; }
 
 
 
-        [Required(ErrorMessage = "Enrolment# is Required!")]
-        [Display(Name = "Enrolment# :")]
+        [Required(ErrorMessage = "HSC Enrolment# is Required!")]
+        [Display(Name = "HSC Enrolment# :")]
 
         public string hsc_enrolment { get; set; }
 
 
-        public int hsc_fk_studentreg { get; set; }
+        //public int hsc_fk_studentreg { get; set; }
 
 
 

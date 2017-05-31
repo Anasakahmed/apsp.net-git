@@ -129,6 +129,6 @@ C:\Users\salman\Desktop\asp.net-mvc\MvcApplication23\MvcApplication23\bin\System
 C:\Users\salman\Desktop\asp.net-mvc\MvcApplication23\MvcApplication23\bin\System.Web.WebPages.xml
 C:\Users\salman\Desktop\asp.net-mvc\MvcApplication23\MvcApplication23\bin\System.Web.WebPages.Deployment.xml
 C:\Users\salman\Desktop\asp.net-mvc\MvcApplication23\MvcApplication23\bin\System.Web.WebPages.Razor.xml
-C:\Users\salman\Desktop\asp.net-mvc\MvcApplication23\MvcApplication23\obj\Debug\MvcApplication23.csprojResolveAssemblyReference.cache
 C:\Users\salman\Desktop\asp.net-mvc\MvcApplication23\MvcApplication23\obj\Debug\MvcApplication23.dll
 C:\Users\salman\Desktop\asp.net-mvc\MvcApplication23\MvcApplication23\obj\Debug\MvcApplication23.pdb
+C:\Users\salman\Desktop\asp.net-mvc\MvcApplication23\MvcApplication23\obj\Debug\MvcApplication23.csprojResolveAssemblyReference.cache
