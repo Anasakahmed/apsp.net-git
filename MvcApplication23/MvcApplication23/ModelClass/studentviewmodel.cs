@@ -152,17 +152,52 @@ namespace MvcApplication23.ModelClass
 
 
 
-       
 
 
 
+        //file path method.................
+        public bool insert_filepath(string f1,string f2,string id)
+        {
+            bool s;
+            SqlConnection conn = new SqlConnection(cs);
+            try
+            {
+                SqlCommand cmd = new SqlCommand("insert_filepath", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                //file.......................................................................
+
+                cmd.Parameters.Add("@filenamessc", SqlDbType.NVarChar, 50).Value = f1;
+                cmd.Parameters.Add("@filenamehsc", SqlDbType.NVarChar, 50).Value = f1;
+                cmd.Parameters.Add("@fk_stu_id", SqlDbType.Int).Value = id;
+
+                
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+
+
+                s = true;
+
+            }
+            catch (Exception)
+            {
+                s = false;
+
+            }
+
+            finally
+            {
+                conn.Close();
+            }
+
+            return s;
+
+        } //method end...........
 
 
 
-
-
-
-
+   
 
 
 

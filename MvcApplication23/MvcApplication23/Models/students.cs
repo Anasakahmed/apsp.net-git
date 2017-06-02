@@ -121,6 +121,10 @@ namespace MvcApplication23.Models
 
         //public int hsc_fk_studentreg { get; set; }
 
+        //;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; posted file
+
+
+       
 
 
     }

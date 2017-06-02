@@ -36,27 +36,27 @@
             
             <strong>Error!</strong> There was an error sending your message.
         </div>
-@using (Html.BeginForm())
+@using (Html.BeginForm("admission", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div style="margin-left:50px">
 
         <table>
             <tr>
                 <td>
-                    <b>CNIC :</b>   <div class="form-control">  @Html.TextBoxFor(Model => Model.stu_cnic)</div>
+                    <b>CNIC :</b>   <div >  @Html.TextBoxFor(Model => Model.stu_cnic, new {@class="form-control" })</div>
                 </td>
                 <td>
-                    <b>Name :</b> <div class="form-control">  @Html.TextBoxFor(Model => Model.stu_name)</div>
+                    <b>Name :</b> <div >  @Html.TextBoxFor(Model => Model.stu_name,new {@class="form-control" })</div>
                 </td>
                 <td></td>
             </tr>
 
             <tr>
                 <td>
-                    <b>Father Name :</b><div class="form-control">     @Html.TextBoxFor(Model => Model.stu_fname)</div>
+                    <b>Father Name :</b><div >     @Html.TextBoxFor(Model => Model.stu_fname, new { @class = "form-control" })</div>
                 </td>
                 <td>
-                    <b>Address :</b><div class="form-control">  @Html.TextBoxFor(Model => Model.stu_address)</div>
+                    <b>Address :</b><div >  @Html.TextBoxFor(Model => Model.stu_address, new { @class = "form-control" })</div>
 
 
                 </td>
@@ -65,10 +65,10 @@
 
             <tr>
                 <td>
-                    <b>Date Of Birth:</b><div class="form-control">     @Html.TextBoxFor(Model => Model.stu_dob)</div>
+                    <b>Date Of Birth:</b><div >     @Html.TextBoxFor(Model => Model.stu_dob, new { @class = "form-control" })</div>
                 </td>
                 <td>
-                    <b>Nationality :</b><div class="form-control">  @Html.TextBoxFor(Model => Model.nationality)</div>
+                    <b>Nationality :</b><div >  @Html.TextBoxFor(Model => Model.nationality, new { @class = "form-control" })</div>
 
                 </td>
             </tr>
@@ -77,51 +77,13 @@
 
             <tr>
                 <td>
-                    <b>Domicile:</b>  <div class="form-control">   @Html.TextBoxFor(Model => Model.stu_domicile)</div>
+                    <b>Domicile:</b>  <div >   @Html.TextBoxFor(Model => Model.stu_domicile, new { @class = "form-control" })</div>
 
 
                 </td>
                 <td>
-                    <b>City :</b><div class="form-control">  @Html.TextBoxFor(Model => Model.stu_city)</div>
+                    <b>City :</b><div >  @Html.TextBoxFor(Model => Model.stu_city, new { @class = "form-control" })</div>
 
-
-                </td>
-            </tr>
-
-
-
-
-
-
-            <tr>
-                <td>
-                    <b>SSC Institue:</b>   <div class="form-control">  @Html.TextBoxFor(Model => Model.ssc_institute)</div>
-
-
-                </td>
-                <td>
-                    <b>SSC Board :</b> <div class="form-control"> @Html.TextBoxFor(Model => Model.ssc_board)</div>
-
-                </td>
-            </tr>
-
-
-
-
-
-            <tr>
-                <td>
-                    <b>SSC TotalMarks:</b><div class="form-control">
-                        @Html.TextBoxFor(Model => Model.ssc_totalmarks)
-                    </div>
-
-
-
-                </td>
-                <td>
-                    <b>SSC Enrolment:</b><div class="form-control">
-                        @Html.TextBoxFor(Model => Model.ssc_enrolment)
-                    </div>
 
                 </td>
             </tr>
@@ -133,8 +95,46 @@
 
             <tr>
                 <td>
-                    <b>HSC Institue:</b><div class="form-control">
-                        @Html.TextBoxFor(Model => Model.hsc_institute)
+                    <b>SSC Institue:</b>   <div >  @Html.TextBoxFor(Model => Model.ssc_institute, new { @class = "form-control" })</div>
+
+
+                </td>
+                <td>
+                    <b>SSC Board :</b> <div > @Html.TextBoxFor(Model => Model.ssc_board, new { @class = "form-control" })</div>
+
+                </td>
+            </tr>
+
+
+
+
+
+            <tr>
+                <td>
+                    <b>SSC TotalMarks:</b><div >
+                        @Html.TextBoxFor(Model => Model.ssc_totalmarks, new { @class = "form-control" })
+                    </div>
+
+
+
+                </td>
+                <td>
+                    <b>SSC Enrolment:</b><div >
+                        @Html.TextBoxFor(Model => Model.ssc_enrolment, new { @class = "form-control" })
+                    </div>
+
+                </td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td>
+                    <b>HSC Institue:</b><div >
+                        @Html.TextBoxFor(Model => Model.hsc_institute, new { @class = "form-control" })
                     </div>
 
 
@@ -143,8 +143,8 @@
 
                 </td>
                 <td>
-                    <b>HSC Board :</b><div class="form-control">
-                        @Html.TextBoxFor(Model => Model.hsc_board)
+                    <b>HSC Board :</b><div >
+                        @Html.TextBoxFor(Model => Model.hsc_board, new { @class = "form-control" })
                     </div>
 
                 </td>
@@ -153,17 +153,35 @@
 
             <tr>
                 <td>
-                    <b>HSC TotalMarks:</b><div class="form-control">
-                        @Html.TextBoxFor(Model => Model.hsc_totalmarks)
+                    <b>HSC TotalMarks:</b><div >
+                        @Html.TextBoxFor(Model => Model.hsc_totalmarks, new { @class = "form-control" })
                     </div>
                 </td>
                 <td>
-                    <b>HSC Enrolment:</b><div class="form-control">
-                        @Html.TextBoxFor(Model => Model.hsc_enrolment)
+                    <b>HSC Enrolment:</b><div>
+                        @Html.TextBoxFor(Model => Model.hsc_enrolment, new { @class = "form-control" })
                     </div>
 
                 </td>
             </tr>
+
+
+
+            <tr>
+                <td>
+                    <b>Matric Marksheet/Certificate:</b><div >
+                                              <input type="file" name="File" id="File" class="form-control" />
+                    </div>
+                </td>
+                <td>
+                    <b>Inter Marksheet/Certificate:</b><div >
+                 <input type="file" name="File2" id="File2" class="form-control" />
+
+                    </div>
+
+                </td>
+            </tr>
+
 
             <tr><td><input type="submit" id="submit" value="Add Record!" class="btn btn-success" /></td></tr>
 
@@ -179,7 +197,10 @@
 
         </table>
 
+        <h2>orientation @ViewBag.path</h2>
+        <h2>orientation @ViewBag.path2</h2>
 
+       
 
     </div>
 }

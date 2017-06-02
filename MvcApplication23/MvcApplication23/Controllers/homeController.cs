@@ -33,20 +33,15 @@ namespace MvcApplication23.Controllers
         {
             return View();
         }
-        //
+       
 
         public ActionResult orientation()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult orientation(HttpPostedFileBase file)
-        {
-
-           
-        return View();
-        }
-        
+       
+     
         
         
         public ActionResult staffgalllery()
@@ -60,23 +55,92 @@ namespace MvcApplication23.Controllers
             return View();
         }
       [HttpPost]
-        public ActionResult admission(students stu)
+      public ActionResult admission(students stu, HttpPostedFileBase file, HttpPostedFileBase file2)
         {
-            if (ModelState.IsValid == true)
+           
+          
+          if (file==null)
             {
-
-
-               studentviewmodel stvm = new studentviewmodel();
-               string s= stvm.insert_loginmethod(stu);
-               stvm.insert_ssc(stu, s);
-               stvm.insert_hsc(stu, s);
-
-                ViewBag.alertmessage = "<script> alert('Data Sucessfully uploaded!!!');     </script>";
-
-
+                ViewBag.alertmessage = "<script> alert('Matric document is Required!!!');     </script>";
             }
+            else if (file2 == null)
+            {
+                ViewBag.alertmessage = "<script> alert('Inter Document is Required!!!');     </script>";
+            }
+
+
+          else
+          {
+
+              if (file != null && file.ContentLength > 0)
+              {
+                  string fileExtension = System.IO.Path.GetExtension(file.FileName);
+
+                  if (fileExtension.ToLower() != ".jpg" && fileExtension.ToLower() != ".png")
+                  {
+                      ViewBag.alertmessage = "<script> alert('Matric document should be in proper format i.e (jpg/png)!!!');     </script>";
+                  }
+                  else
+                  {
+                      string path = Server.MapPath("~/Content/" + file.FileName);
+                      file.SaveAs(path);
+                      ViewBag.path = path;
+                  }
+              }
+
+
+              if (file2 != null && file2.ContentLength > 0)
+              {
+                  string fileExtension = System.IO.Path.GetExtension(file2.FileName);
+
+                  if (fileExtension.ToLower() != ".jpg" && fileExtension.ToLower() != ".png")
+                  {
+                      ViewBag.alertmessage = "<script> alert('Inter document should be in proper format i.e (jpg/png)!!!');     </script>";
+                  }
+                  else
+                  {
+                      string path = Server.MapPath("~/Content/" + file2.FileName);
+                      file2.SaveAs(path);
+                      ViewBag.path2 = path;
+                  }
+              }
+
+
+
+              if (ModelState.IsValid == true)
+              {
+
+
+                  studentviewmodel stvm = new studentviewmodel();
+                  string s = stvm.insert_loginmethod(stu);
+                  stvm.insert_ssc(stu, s);
+                  stvm.insert_hsc(stu, s);
+                  stvm.insert_filepath(ViewBag.path1, ViewBag.path2, s);
+                  ViewBag.alertmessage = "<script> alert('Data Sucessfully uploaded!!!');     </script>";
+
+
+              }
+
+
+
+          }
+          
+          
+          
+         
             return View();
         }
+
+
+
+      
+
+
+
+
+
+
+
 
       
 
