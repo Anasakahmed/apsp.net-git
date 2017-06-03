@@ -9,15 +9,28 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>admin</title>
+<style>
+    td,Th{
+        border:1px solid;
+        padding:10px;
+    }
+</style>
 </head>
+
 <body>
     <div>
-        <table>
+        <table border="1">
 
             <tr>
-                <th>Id</th>
+                <th>Applicant ID</th>
                 <th>Name</th>
-                <th>Email</th>
+                <th>Father Name</th>
+                <th>Domicile</th>
+                <th>Cnic Number</th>
+                <th>Date Of Birth</th>
+                <th>City</th>
+
+
 
             </tr>
             @foreach (var item in Model)
@@ -25,10 +38,11 @@
                 <tr>
                     <td>@item.stu_id</td>
                     <td>@item.stu_name</td>
+                    <td>@item.stu_fname</td>
                     <td>@item.stu_domicile</td>
-
-                    
-
+                    <td>@item.stu_cnic</td>
+                    <td>@item.stu_dob</td>
+                    <td>@item.stu_city</td>
 
 
                 </tr>

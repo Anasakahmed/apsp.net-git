@@ -35,6 +35,12 @@ namespace MvcApplication23.ModelClass
                 emp.stu_id = int.Parse(rdr["STU_ID"].ToString());
                 emp.stu_name = rdr["STU_NAME"].ToString();
                 emp.stu_domicile = rdr["STU_DOMICILE"].ToString();
+                emp.stu_fname=rdr["STU_FNAME"].ToString();
+                emp.stu_cnic = rdr["STU_CNIC"].ToString();
+                emp.stu_dob = rdr["STU_DOB"].ToString();
+                emp.stu_address = rdr["STU_ADDRESS"].ToString();
+                emp.stu_city = rdr["STU_CITY"].ToString();
+
                 li.Add(emp);
             }
 
