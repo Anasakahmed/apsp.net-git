@@ -15,6 +15,61 @@ namespace MvcApplication23.ModelClass
     {
         
         string cs = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+
+
+
+        public List<students> getallemployees()
+        {
+            List<students> li = new List<students>();
+
+            SqlConnection con = new SqlConnection(cs);
+            SqlCommand cmd = new SqlCommand("showstudents", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            SqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+
+                students emp = new students();
+                emp.stu_id = int.Parse(rdr["STU_ID"].ToString());
+                emp.stu_name = rdr["STU_NAME"].ToString();
+                emp.stu_domicile = rdr["STU_DOMICILE"].ToString();
+                li.Add(emp);
+            }
+
+            return li;
+
+
+        }//method end....................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public string insert_loginmethod(students stu)
         {
             string s = "";
@@ -168,7 +223,7 @@ namespace MvcApplication23.ModelClass
                 //file.......................................................................
 
                 cmd.Parameters.Add("@filenamessc", SqlDbType.NVarChar, 50).Value = f1;
-                cmd.Parameters.Add("@filenamehsc", SqlDbType.NVarChar, 50).Value = f1;
+                cmd.Parameters.Add("@filenamehsc", SqlDbType.NVarChar, 50).Value = f2;
                 cmd.Parameters.Add("@fk_stu_id", SqlDbType.Int).Value = id;
 
                 

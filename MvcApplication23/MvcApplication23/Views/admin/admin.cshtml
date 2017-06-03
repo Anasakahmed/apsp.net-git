@@ -1,0 +1,42 @@
+﻿@model List< MvcApplication23.Models.students>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>admin</title>
+</head>
+<body>
+    <div>
+        <table>
+
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.stu_id</td>
+                    <td>@item.stu_name</td>
+                    <td>@item.stu_domicile</td>
+
+                    
+
+
+
+                </tr>
+
+            }
+
+        </table>
+
+    </div>
+</body>
+</html>
